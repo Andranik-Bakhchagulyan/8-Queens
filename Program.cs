@@ -1,11 +1,11 @@
-﻿namespace _8_Queen
+﻿namespace Task_8_Queen
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             Program p = new Program();
-            List<int[,]> results = p.findAllResults();
+            List<int[,]> results = findAllResults();
 
             Console.WriteLine($"Number of results: {results.Count}\n");
 
@@ -19,18 +19,18 @@
             Console.ReadKey();
         }
 
-        public List<int[,]> findAllResults()
+        public static List<int[,]> findAllResults()
         {
             List<int[,]> results = new List<int[,]>();
             Program p = new Program();
             for (int i = 0; i < 8; ++i)
                 for (int j = 0; j < 8; ++j)
-                    p.board[i, j] = 0;
-            p.tryQ(0, results);
+                     board[i, j] = 0;
+            tryQ(0, results);
             return results;
         }
 
-        public void tryQ(int i, List<int[,]> results)
+        public static void tryQ(int i, List<int[,]> results)
         {
             for (int j = 0; j < 8; ++j)
             {
@@ -52,7 +52,7 @@
             }
         }
 
-        public void setQ(int i, int j)
+        public static void setQ(int i, int j)
         {
             for (int x = 0; x < 8; ++x)
             {
@@ -71,7 +71,7 @@
             board[i, j] = -1;
         }
 
-        public void resetQ(int i, int j)
+        public static void resetQ(int i, int j)
         {
             for (int x = 0; x < 8; ++x)
             {
@@ -105,6 +105,6 @@
             }
         }
 
-        public int[,] board = new int[8, 8];
+        public static int[,] board = new int[8, 8];
     }
 }
