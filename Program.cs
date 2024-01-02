@@ -4,7 +4,6 @@
     {
         static void Main(string[] args)
         {
-            Program p = new Program();
             List<int[,]> results = findAllResults();
 
             Console.WriteLine($"Number of results: {results.Count}\n");
@@ -22,7 +21,6 @@
         public static List<int[,]> findAllResults()
         {
             List<int[,]> results = new List<int[,]>();
-            Program p = new Program();
             for (int i = 0; i < 8; ++i)
                 for (int j = 0; j < 8; ++j)
                      board[i, j] = 0;
