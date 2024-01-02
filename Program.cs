@@ -24,17 +24,17 @@
             for (int i = 0; i < 8; ++i)
                 for (int j = 0; j < 8; ++j)
                      board[i, j] = 0;
-            TryQ(0, results);
+            AttemptAddToBoard(0, results);
             return results;
         }
 
-        public static void TryQ(int i, List<int[,]> results)
+        public static void AttemptAddToBoard(int i, List<int[,]> results)
         {
             for (int j = 0; j < 8; ++j)
             {
                 if (board[i, j] == 0)
                 {
-                    SetQ(i, j);
+                    AddToBoard(i, j);
                     if (i == 7)
                     {
                         int[,] resultation = new int[8, 8];
@@ -43,14 +43,14 @@
                     }
                     else
                     {
-                        TryQ(i + 1, results);
+                        AttemptAddToBoard(i + 1, results);
                     }
-                    ReSetQ(i, j);
+                    RemoveFromBoard(i, j);
                 }
             }
         }
 
-        public static void SetQ(int i, int j)
+        public static void AddToBoard(int i, int j)
         {
             for (int x = 0; x < 8; ++x)
             {
@@ -69,7 +69,7 @@
             board[i, j] = -1;
         }
 
-        public static void ReSetQ(int i, int j)
+        public static void RemoveFromBoard(int i, int j)
         {
             for (int x = 0; x < 8; ++x)
             {
