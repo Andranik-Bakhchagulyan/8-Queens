@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            List<int[,]> results = findAllResults();
+            List<int[,]> results = FindAllResults();
 
             Console.WriteLine($"Number of results: {results.Count}\n");
 
@@ -18,17 +18,17 @@
             Console.ReadKey();
         }
 
-        public static List<int[,]> findAllResults()
+        public static List<int[,]> FindAllResults()
         {
             List<int[,]> results = new List<int[,]>();
             for (int i = 0; i < 8; ++i)
                 for (int j = 0; j < 8; ++j)
                      board[i, j] = 0;
-            tryQ(0, results);
+            TryQ(0, results);
             return results;
         }
 
-        public static void tryQ(int i, List<int[,]> results)
+        public static void TryQ(int i, List<int[,]> results)
         {
             for (int j = 0; j < 8; ++j)
             {
@@ -43,9 +43,9 @@
                     }
                     else
                     {
-                        tryQ(i + 1, results);
+                        TryQ(i + 1, results);
                     }
-                    resetQ(i, j);
+                    ResetQ(i, j);
                 }
             }
         }
@@ -69,7 +69,7 @@
             board[i, j] = -1;
         }
 
-        public static void resetQ(int i, int j)
+        public static void ResetQ(int i, int j)
         {
             for (int x = 0; x < 8; ++x)
             {
