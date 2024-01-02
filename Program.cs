@@ -34,7 +34,7 @@
             {
                 if (board[i, j] == 0)
                 {
-                    setQ(i, j);
+                    SetQ(i, j);
                     if (i == 7)
                     {
                         int[,] resultation = new int[8, 8];
@@ -45,12 +45,12 @@
                     {
                         TryQ(i + 1, results);
                     }
-                    ResetQ(i, j);
+                    ReSetQ(i, j);
                 }
             }
         }
 
-        public static void setQ(int i, int j)
+        public static void SetQ(int i, int j)
         {
             for (int x = 0; x < 8; ++x)
             {
@@ -69,7 +69,7 @@
             board[i, j] = -1;
         }
 
-        public static void ResetQ(int i, int j)
+        public static void ReSetQ(int i, int j)
         {
             for (int x = 0; x < 8; ++x)
             {
